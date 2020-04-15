@@ -3,6 +3,7 @@ from CustomException import *
 from bs4 import BeautifulSoup as soup
 
 class Stocky:
+    """Class containing central functionality for Stocky CLI"""
     def __init__(self, url):
         self.url = url
     
@@ -12,15 +13,21 @@ class Stocky:
                 
             http = urllib3.PoolManager()
             client = http.urlopen('GET', self.url+asset, redirect=False)
-            
-            if client.status == 200:
-                page_html = soup(client.data, 'html.parser')
-                print(page_html.prettify())
-            else:
+
+            if client.status >= 500:
+                raise ServerException()
+            elif client.status != 200:
                 raise BadAssetException()
+
         except BadAssetException as e:
-            print(e.message+"\n")
+            print(e.message)
             self.check_stock()
+        except ServerException as e:
+            print(e.message)
+            exit()
+        else:
+            page_html = soup(client.data, 'html.parser')
+            print(page_html.prettify())
             
 
     def __get_asset_from_user(self):
