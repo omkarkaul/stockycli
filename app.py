@@ -1,5 +1,5 @@
 from Stocky import *
 
-stocky = Stocky('https://finance.yahoo.com/quote/')
+stocky = Stocky()
 
 stocky.check_stock()
