@@ -11,6 +11,9 @@ This is the stocky cli. User enters an asset to lookup and stocky scrapes latest
 - Click
 
 ## TODO:
+- [x] scrape latest price and time
+- [x] encapsulate data retrieval 
+- [x] add some custom exceptions
 - [ ] finish scraper logic
 - [ ] build actual cli
 - [ ] more error handling
