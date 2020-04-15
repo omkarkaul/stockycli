@@ -11,7 +11,7 @@ class Stocky:
             "attrs":{"class":"Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)"}
         }
         self.time_attributes = {
-            "id":"qquote-market-notice"
+            "id":"quote-market-notice"
         }
     
     def check_stock(self):
