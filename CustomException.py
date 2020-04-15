@@ -10,5 +10,6 @@ class ServerException(Exception):
 
 class BrokenPageException(Exception):
     """Raised when the Yahoo Finance page has changed in such a way that the scraper is now broken"""
-    def __init__(self):
-        self.message = "Sorry, it seems like Yahoo Finance has recently changed their page consequently rendering Stocky as currently broken! :(\n Please file an issue on the Stocky github page so we can fix it!"
+    def __init__(self, arg):
+        self.arg = arg # element causing the issue
+        self.message = "Sorry, it seems like Yahoo Finance has recently updated their front-end, consequently rendering Stocky as broken! :(\nPlease file an issue on the Stocky github page so we can fix it!\n"
