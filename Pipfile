@@ -9,6 +9,7 @@ verify_ssl = true
 beautifulsoup4 = "*"
 urllib3 = "*"
 click = "*"
+stockycli = {editable = true,path = "."}
 
 [requires]
 python_version = "3.6"
