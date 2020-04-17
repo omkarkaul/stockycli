@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup as soup
 
 class Stocky:
     """Class containing central functionality for Stocky CLI"""
-    def __init__(self):
+    def __init__(self, asset):
         self.url = "https://finance.yahoo.com/quote/"
+        self.asset = asset
         self.price_attributes = {
             "element":"span",
             "attrs":{"class":"Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)"}
@@ -16,7 +17,8 @@ class Stocky:
     
     def check_stock(self):
         try:
-            asset = self.__get_asset_from_user()
+           # asset = self.__get_asset_from_user()
+            asset = self.asset
                 
             http = urllib3.PoolManager()
             client = http.urlopen('GET', self.url+asset, redirect=False)
@@ -38,6 +40,7 @@ class Stocky:
             
             print(f"{asset}'s latest price: ${stock_data['price']}, {stock_data['time']}\n")
 
+    """OLD OLD OLD OLD OLD OLD OLD OLD"""
     def __get_asset_from_user(self):
         asset = None
 
