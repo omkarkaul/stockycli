@@ -26,11 +26,10 @@ class Stocky:
             if client.status >= 500:
                 raise ServerException()
             elif client.status != 200:
-                raise BadAssetException()
+                raise BadAssetException(self.asset)
 
         except BadAssetException as e:
             print(e.message)
-            self.check_stock()
         except ServerException as e:
             print(e.message)
             exit()
