@@ -18,7 +18,7 @@ pip3 install setup.py
 ```
 - Now you can use the alias __stockycli__, followed by the __--price__ flag and a valid asset name to search for its price, like so:
 ```
-$ ~ stockycli --price NZ.AIR
+$ ~ stockycli --price AIR.NZ
 $ ~ AIR.NZ's latest price: $1.3100, at close: 5:00PM NZST
 ```
 
