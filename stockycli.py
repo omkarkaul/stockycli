@@ -10,3 +10,5 @@ def cli(price):
         stocky = Stocky(price)
         stocky.check_stock()
 
+if __name__ == "__main__":
+    cli()
