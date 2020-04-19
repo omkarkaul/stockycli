@@ -12,11 +12,18 @@ This is the stocky cli. User enters an asset to lookup and stocky scrapes latest
 
 ## How to use:
 - Clone the repo to a folder of your choosing
-- CD to the chosen directory and type:
-```python
-pip3 install setup.py
+- CD to the chosen directory and build the app by typing the following:
 ```
-- Now you can use the alias __stockycli__, followed by the __--price__ flag and a valid asset name to search for its price, like so:
+python3 setup.py bdist_wheel
+```
+- Now install the package locally on your machine by typing the following:
+```
+pip install dist/stockycli-1.0-py3-none-any.whl
+```
+
+A _whl_ or _Wheel_ file is the standard built-package format used for Python modules.  
+
+Now, in your terminal, you can use the alias __stockycli__, followed by the __--price__ flag and a valid asset name to search for its price, like so:
 ```
 $ ~ stockycli --price AIR.NZ
 $ ~ AIR.NZ's latest price: $1.3100, at close: 5:00PM NZST
@@ -33,3 +40,4 @@ Please file an issue if you find any, or contact me directly :)
 - [x] more error handling
 - [ ] _more_ more error handling
 - [ ] continue TDD
+- [ ] upload to pypi to bypass the cumbersome build + install process
