@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="stockycli",
     version="1.0",
-    py_modules=["stockycli"],
+    py_modules=["stockycli", "Stocky", "CustomException"],
     include_package_data=True,
     install_requires = [
         "click",
